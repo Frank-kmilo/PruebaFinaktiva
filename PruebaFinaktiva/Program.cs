@@ -25,8 +25,21 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Prueba Finaktiva", Version = "v1" });
 });
 
-WebApplication app = builder.Build();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:4200")
+                   .AllowAnyHeader()
+                   .AllowAnyMethod()
+                   .WithMethods("GET", "POST")
+                   .WithHeaders("Content-Type");
+        });
+});
 
+WebApplication app = builder.Build();
+app.UseCors("AllowSpecificOrigin");
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

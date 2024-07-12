@@ -1,0 +1,39 @@
+<div class="container">
+  <h3>Buscar Eventos</h3>
+
+  <form [formGroup]="form" (ngSubmit)="search()" class="search-form">
+    <label for="eventType">Tipo de Evento:</label>
+    <select id="eventType" formControlName="eventType" class="form-control">
+      <option value="">Todos</option>
+      <option value="Api">Api</option>
+      <option value="Formulario">Formulario de eventos</option>
+    </select>
+
+    <label for="startDate">Fecha Inicio:</label>
+    <input type="date" id="startDate" formControlName="startDate" class="form-control" />
+
+    <label for="endDate">Fecha Fin:</label>
+    <input type="date" id="endDate" formControlName="endDate" class="form-control" />
+
+    <button type="submit" class="btn btn-primary">Buscar</button>
+  </form>
+
+  <div class="table-responsive">
+    <table class="table table-striped events-table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Tipo de Evento</th>
+          <th scope="col">Fecha del Evento</th>
+          <th scope="col">Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of events">
+          <td>{{ event.eventType }}</td>
+          <td>{{ event.eventDate }}</td>
+          <td>{{ event.eventDescription }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

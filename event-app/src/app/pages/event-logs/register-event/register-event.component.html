@@ -1,0 +1,25 @@
+<div class="form-container">
+  <p class="form-title">Registrar Eventos</p>
+
+  <form [formGroup]="form" (ngSubmit)="addEvent()">
+
+    <label for="eventType">Tipo de Evento:</label>
+    <select id="eventType" formControlName="type">
+      <option value="">Selecciona una opción</option>
+      <option value="Api">Api</option>
+      <option value="Formulario">Formulario de eventos</option>
+    </select>
+
+    <label for="eventDate">Fecha Evento:</label>
+    <input type="date" id="eventDate" formControlName="eventDate">
+
+    <label for="eventDescription">Descripción:</label>
+    <input type="text" id="eventDescription" formControlName="eventDescription">
+
+    <button [disabled]="!form.valid" type="submit">
+      Crear
+    </button>
+
+  </form>
+</div>
+
