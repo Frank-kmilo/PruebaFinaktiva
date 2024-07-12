@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaFinaktiva.Api", "PruebaFinaktiva\PruebaFinaktiva.Api.csproj", "{D16CC42C-A68C-4242-935E-148567E69F4B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaFinaktiva.Test", "PruebaFinaktiva.Test\PruebaFinaktiva.Test.csproj", "{9D956990-09D8-4B9D-87DE-61257B8ECA18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D16CC42C-A68C-4242-935E-148567E69F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D16CC42C-A68C-4242-935E-148567E69F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D16CC42C-A68C-4242-935E-148567E69F4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D956990-09D8-4B9D-87DE-61257B8ECA18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D956990-09D8-4B9D-87DE-61257B8ECA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D956990-09D8-4B9D-87DE-61257B8ECA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D956990-09D8-4B9D-87DE-61257B8ECA18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
