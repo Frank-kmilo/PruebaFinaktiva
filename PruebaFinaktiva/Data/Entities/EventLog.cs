@@ -5,6 +5,7 @@ namespace PruebaFinaktiva.Data.Entities
 {
     public class EventLog
     {
+        [JsonProperty]
         public int Id { get; set; }
 
         [Display(Name = "Tipo de evento")]
