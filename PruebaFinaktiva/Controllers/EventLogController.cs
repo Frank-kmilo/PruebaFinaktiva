@@ -15,15 +15,6 @@ namespace PruebaFinaktiva.Api.Controllers
             _eventLogProvider = eventLogProvider;
         }
 
-
-        [HttpGet]
-        [Route("get-all")]
-        public async Task<ActionResult> GetAllAsync()
-        {
-            List<EventLog> eventLogs = await _eventLogProvider.GetAllAsync();
-            return Ok(eventLogs);
-        }
-
         [HttpPost]
         [Route("add-log")]
         public async Task<ActionResult> AddLog(EventLog eventLog)
@@ -35,12 +26,20 @@ namespace PruebaFinaktiva.Api.Controllers
                 Ok(response);
         }
 
-
         [HttpGet]
-        [Route("GetEventsByFilters/{type}/{dateStart}/{dateEnd}")]
-        public async Task<ActionResult> GetEventsByFilters(string type, DateTime dateStart, DateTime dateEnd)
+        [Route("Get-Events/{type}/{startDate}/{endDate}")]
+        public async Task<ActionResult> GetEventsByFilters(string? type, DateTime? startDate, DateTime? endDate)
         {
-            List<EventLog> eventLogs = await _eventLogProvider.GetEventsByFilters(type, dateStart, dateEnd);
+            List<EventLog> eventLogs;
+            if (string.IsNullOrEmpty(type) && startDate == null && endDate == null)
+            {
+                eventLogs = await _eventLogProvider.GetEventsByFilters(type, startDate, endDate);
+
+            }
+            else
+            {
+                eventLogs = await _eventLogProvider.GetAllAsync();
+            }
             return Ok(eventLogs);
         }
     }

@@ -34,11 +34,11 @@ namespace PruebaFinaktiva.Api.Repository
             }
         }
 
-        public async Task<List<EventLog>> GetEventsByFilters(string type, DateTime dateStart, DateTime dateEnd)
+        public async Task<List<EventLog>> GetEventsByFilters(string? type, DateTime? startDate, DateTime? endDate)
         {
             return await _context.EventLogs.Where(x => x.EventType == type &&
-                                                  x.EventDate >= dateStart &&
-                                                  x.EventDate <= dateEnd).ToListAsync();
+                                                  x.EventDate >= startDate &&
+                                                  x.EventDate <= endDate).ToListAsync();
         }
     }
 }

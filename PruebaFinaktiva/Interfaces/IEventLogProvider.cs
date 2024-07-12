@@ -8,6 +8,6 @@ namespace PruebaFinaktiva.Api.Interfaces
 
         Task<string> AddLogAsync(EventLog eventLog);
 
-        Task<List<EventLog>> GetEventsByFilters(string type, DateTime dateStart, DateTime dateEnd);
+        Task<List<EventLog>> GetEventsByFilters(string? type, DateTime? startDate, DateTime? endDate);
     }
 }
