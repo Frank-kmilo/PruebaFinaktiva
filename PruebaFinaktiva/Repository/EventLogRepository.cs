@@ -38,7 +38,7 @@ namespace PruebaFinaktiva.Api.Repository
         {
             return await _context.EventLogs.Where(x => x.EventType == type &&
                                                   x.EventDate >= dateStart &&
-                                                  x.EventDate >= dateEnd).ToListAsync();
+                                                  x.EventDate <= dateEnd).ToListAsync();
         }
     }
 }

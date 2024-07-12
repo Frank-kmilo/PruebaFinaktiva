@@ -4,7 +4,6 @@ using PruebaFinaktiva.Data.Entities;
 
 namespace PruebaFinaktiva.Api.Controllers
 {
-    [Produces("aplication/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class EventLogController : ControllerBase
@@ -38,7 +37,7 @@ namespace PruebaFinaktiva.Api.Controllers
 
 
         [HttpGet]
-        [Route("Get/{type}/{dateStart}/{dateEnd}")]
+        [Route("GetEventsByFilters/{type}/{dateStart}/{dateEnd}")]
         public async Task<ActionResult> GetEventsByFilters(string type, DateTime dateStart, DateTime dateEnd)
         {
             List<EventLog> eventLogs = await _eventLogProvider.GetEventsByFilters(type, dateStart, dateEnd);
